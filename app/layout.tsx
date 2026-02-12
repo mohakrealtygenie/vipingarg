@@ -1,5 +1,5 @@
 import localFont from 'next/font/local'
-import { Inter, Playfair_Display } from "next/font/google";
+import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const apple = localFont({
@@ -39,9 +39,10 @@ const apple = localFont({
   display: "swap",
 })
 
-const inter = Inter({
+const outfit = Outfit({
   variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
@@ -62,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${apple.variable} ${inter.variable} ${playfair.variable} antialiased`}
+        className={`${apple.variable} ${outfit.variable} ${playfair.variable} antialiased`}
       >
         {children}
       </body>

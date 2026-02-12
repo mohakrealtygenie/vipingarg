@@ -36,7 +36,7 @@ const services = [
 const container = {
   hidden: {},
   show: {
-    transition: { staggerChildren: 0.12 },
+    transition: { staggerChildren: 0.05 },
   },
 }
 

@@ -47,10 +47,10 @@ export default function AudienceSelector() {
     <section className="py-20 md:py-28 bg-white">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4 }}
           className="text-center mb-12"
         >
           <span className="text-xs font-semibold uppercase tracking-wider text-blue">
@@ -73,10 +73,10 @@ export default function AudienceSelector() {
               key={a.title}
               href={a.href}
               variants={item}
-              className="group flex items-center gap-5 rounded-xl border border-gray-200 bg-white p-5 md:p-6 transition-all hover:border-blue/30 hover:shadow-lg hover:shadow-blue/5"
+              className="group flex items-center gap-5 rounded-xl border border-gray-200 bg-white p-5 md:p-6 transition-all hover:border-blue/30 hover:shadow-xl hover:shadow-blue/5"
             >
               <div
-                className={`shrink-0 w-12 h-12 rounded-xl flex items-center justify-center ${a.color}`}
+                className={`shrink-0 w-12 h-12 border border-gray-200 rounded-xl flex items-center justify-center ${a.color}`}
               >
                 <a.icon size={22} />
               </div>

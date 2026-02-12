@@ -66,7 +66,7 @@ export default function CoachingPrograms() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               className="relative group rounded-2xl p-8 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors duration-300 flex flex-col h-full"
             >
               <div

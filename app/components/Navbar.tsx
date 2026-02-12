@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { HiBars3, HiXMark } from 'react-icons/hi2'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
 const navLinks = [
   { label: 'Home', href: '#' },
@@ -22,7 +23,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             className="font-[family-name:var(--font-apple)] text-3xl font-bold tracking-tight text-navy"
           >
             Vipin Garg
@@ -42,12 +43,29 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <a
-            href="#contact"
-            className="hidden md:inline-flex items-center rounded-full bg-blue px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-blue-light hover:shadow-md"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="hidden md:block"
           >
-            Book a Call
-          </a>
+            <Link
+              href="https://cal.com/vipin-garg"
+              className="relative overflow-hidden rounded-full bg-blue px-8 py-3 text-sm font-bold text-white shadow-lg"
+            >
+              <span className="relative z-10">Book a Call</span>
+              <motion.div
+                initial={{ x: '-100%' }}
+                animate={{ x: '200%' }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 2,
+                  ease: "linear",
+                  repeatDelay: 2
+                }}
+                className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+              />
+            </Link>
+          </motion.div>
 
           {/* Mobile Menu Button */}
           <button

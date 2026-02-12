@@ -6,105 +6,123 @@ import { HiArrowRight } from 'react-icons/hi2'
 
 export default function HeroSection() {
   return (
-    <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Column: Text */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          >
-            <span className="inline-block rounded-full border border-gray-200 bg-gray-50 px-4 py-1.5 text-xs font-medium text-gray-600 uppercase tracking-wider mb-8">
-              A Trusted Financial Advisor
-            </span>
+    <section className="relative min-h-screen flex items-center pb-12 md:pb-20 overflow-hidden bg-off-white">
+      {/* Background decoration: Subtle blue gradient */}
+      <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-l from-blue-light/10 via-cream to-transparent opacity-60" />
 
-            {/* Anthropic-style mixed typography — large, dramatic */}
-            <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem] leading-[1.08] tracking-tight mb-8">
-              <span className="font-[family-name:var(--font-sans)] font-semibold text-gray-900">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          {/* Left Column: Text */}
+          <motion.div>
+            <motion.span 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-block border-l-2 border-gold pl-4 text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-8"
+            >
+              A Trusted Financial Advisor
+            </motion.span>
+
+            {/* Anthropic-style mixed typography — compact */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-6 text-navy font-bold">
+              <span className="font-[family-name:var(--font-serif-display)] font-bold">
                 Build Your Financial
               </span>
               <br />
-              <span className="font-[family-name:var(--font-sans)] font-semibold text-gray-900">
+              <span className="font-[family-name:var(--font-serif-display)] font-bold">
                 Future With{' '}
               </span>
-              <span className="font-[family-name:var(--font-apple)] italic font-normal text-gray-900">
+              <span className="font-[family-name:var(--font-apple)] italic text-gold relative inline-block">
                 Clarity,
+                <svg className="absolute -bottom-1 left-0 w-full h-2 text-gold opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
+                </svg>
               </span>
               <br />
-              <span className="font-[family-name:var(--font-apple)] italic font-normal text-gray-900">
+              <span className="font-[family-name:var(--font-apple)] italic text-gold">
                 Confidence,
               </span>{' '}
-              <span className="font-[family-name:var(--font-sans)] font-semibold text-gray-900">
+              <span className="font-[family-name:var(--font-serif-display)] font-bold">
                 and the
               </span>
               <br />
-              <span className="font-[family-name:var(--font-sans)] font-semibold text-gray-900">
+              <span className="font-[family-name:var(--font-serif-display)] font-bold">
                 Right Guidance
               </span>
             </h1>
 
-            <p className="text-base md:text-lg text-gray-500 leading-relaxed mb-3 max-w-lg">
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 max-w-lg font-light"
+            >
               Finance coaching for exams &amp; careers • Private market
               investing guidance • Mortgage solutions
-            </p>
+            </motion.p>
 
-            <p className="text-sm text-gray-400 mb-10 max-w-lg">
-              Led by a CFA Charterholder with deep experience across capital
-              markets, education, and real-world finance.
-            </p>
-
-            <div className="flex flex-wrap gap-3">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="flex flex-wrap gap-4"
+            >
               <a
                 href="/coaching"
-                className="inline-flex items-center gap-2 rounded-full bg-blue text-white px-6 py-3 text-sm font-medium transition-all hover:bg-gray-800 hover:shadow-lg group"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-blue px-8 py-3 text-sm font-medium text-white transition-all hover:bg-navy/90 hover:shadow-lg"
               >
-                Explore Coaching
-                <HiArrowRight
-                  size={15}
-                  className="transition-transform group-hover:translate-x-1"
+                <span className="relative z-10 flex items-center gap-2">
+                  Explore Coaching
+                  <HiArrowRight
+                    size={16}
+                    className="transition-transform group-hover:translate-x-1"
+                  />
+                </span>
+                <motion.div
+                  initial={{ x: '-100%', skewX: -25 }}
+                  animate={{ x: '200%' }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatDelay: 3,
+                    duration: 1.5,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute inset-0 z-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent"
                 />
               </a>
               <a
                 href="#investing"
-                className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white text-gray-700 px-6 py-3 text-sm font-medium transition-all hover:border-gray-400 hover:shadow-sm"
+                className="inline-flex items-center gap-2 rounded-full border border-gray-400 bg-white text-gray-700 px-6 py-3 text-sm font-medium transition-all hover:border-gray-400 hover:shadow-sm"
               >
                 Private Market Investing
               </a>
-              <a
-                href="#mortgages"
-                className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white text-gray-700 px-6 py-3 text-sm font-medium transition-all hover:border-gray-400 hover:shadow-sm"
-              >
-                Mortgage Solutions
-              </a>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Right Column: Hero Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-            className="relative flex justify-center lg:justify-end"
+            transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+            className="relative flex justify-center lg:justify-end h-[40vh] lg:h-[60vh] items-center"
           >
-            <div className="relative w-80 h-96 md:w-[50rem] md:h-[40rem] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full h-full max-w-md rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
               <Image
                 src="/vipin-hero.jpg"
                 alt="Vipin Garg - Financial Advisor"
                 fill
                 className="object-cover object-top"
                 priority
-                sizes="(max-width: 768px) 500px, 352px"
+                sizes="(max-width: 768px) 100vw, 500px"
               />
               {/* Subtle gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/30 via-transparent to-transparent" />
             </div>
+            {/* Background blob for texture */}
+            <div className="absolute -z-10 -bottom-10 -right-10 w-64 h-64 bg-gold/20 rounded-full blur-3xl opacity-50" />
             {/* Floating credential badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="absolute -bottom-1 left-4 lg:left-0 bg-white rounded-xl shadow-lg border border-gray-100 px-4 py-3 flex items-center gap-3"
+            <div
+              className="absolute bottom-6 left-1/3 -translate-x-1/2 bg-white/95 backdrop-blur rounded-xl shadow-lg border border-gray-100 px-4 py-3 flex items-center gap-3"
             >
               <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
                 <svg className="w-5 h-5 text-gray-900" fill="currentColor" viewBox="0 0 20 20">
@@ -119,7 +137,7 @@ export default function HeroSection() {
                 <p className="text-xs font-semibold text-gray-900">CFA Charterholder</p>
                 <p className="text-[11px] text-gray-400">MBA in Finance</p>
               </div>
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>

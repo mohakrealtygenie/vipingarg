@@ -31,10 +31,9 @@ export default function WhatIDo() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Text */}
           <motion.div
-            initial={{ opacity: 0, x: -15 }}
+            initial={{ opacity: 0, x: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.4 }}
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-blue">
               What I Do
@@ -56,10 +55,9 @@ export default function WhatIDo() {
 
           {/* Right Service Pills */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4 }}
             className="space-y-4"
           >
             {services.map((service) => (
