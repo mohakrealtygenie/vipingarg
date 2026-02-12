@@ -39,3 +39,31 @@ body {
   background-color: var(--color-blue-muted);
   color: var(--color-navy);
 }
+
+/* Shiny Button Effect */
+.btn-shiny {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    110deg,
+    var(--color-blue) 45%,
+    var(--color-blue-light) 50%,
+    var(--color-blue) 55%
+  );
+  background-size: 200% 100%;
+  animation: shine 3s linear infinite;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-shiny:hover {
+  background-position: 100% 0;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

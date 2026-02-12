@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { HiArrowRight } from 'react-icons/hi2'
 
 export default function HeroSection() {
   return (
@@ -11,9 +11,9 @@ export default function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Column: Text */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <span className="inline-block rounded-full border border-gray-200 bg-gray-50 px-4 py-1.5 text-xs font-medium text-gray-600 uppercase tracking-wider mb-8">
               A Trusted Financial Advisor
@@ -56,11 +56,11 @@ export default function HeroSection() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href="#coaching"
+                href="/coaching"
                 className="inline-flex items-center gap-2 rounded-full bg-blue text-white px-6 py-3 text-sm font-medium transition-all hover:bg-gray-800 hover:shadow-lg group"
               >
                 Explore Coaching
-                <ArrowRight
+                <HiArrowRight
                   size={15}
                   className="transition-transform group-hover:translate-x-1"
                 />

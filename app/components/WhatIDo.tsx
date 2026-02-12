@@ -1,23 +1,23 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, BarChart3, Home } from 'lucide-react'
+import { HiBookOpen, HiChartBar, HiHomeModern } from 'react-icons/hi2'
 
 const services = [
   {
-    icon: BookOpen,
+    icon: HiBookOpen,
     label: 'Finance Coaching',
     description: 'CFA, CSI exams, and university-level subjects',
     color: 'bg-blue/10 text-blue',
   },
   {
-    icon: BarChart3,
+    icon: HiChartBar,
     label: 'Exempt Market Guidance',
     description: 'Private equity, debt & real estate',
     color: 'bg-emerald-50 text-emerald-600',
   },
   {
-    icon: Home,
+    icon: HiHomeModern,
     label: 'Mortgage Solutions',
     description: 'Aligned with long-term financial goals',
     color: 'bg-amber-50 text-amber-600',
@@ -31,10 +31,10 @@ export default function WhatIDo() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Text */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -15 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.5 }}
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-blue">
               What I Do

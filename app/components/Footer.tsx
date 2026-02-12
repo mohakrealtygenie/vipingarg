@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { HiEnvelope, HiPhone, HiMapPin } from 'react-icons/hi2'
 
 const footerLinks = {
   'Vipin Garg': {
@@ -6,21 +6,21 @@ const footerLinks = {
       'Building financial futures through education, investment, and smart financing.',
   },
   'Quick Links': [
-    { label: 'Coaching', href: '#coaching' },
+    { label: 'Coaching', href: '/coaching' },
     { label: 'Investing', href: '#investing' },
     { label: 'Mortgages', href: '#mortgages' },
     { label: 'About', href: '#about' },
   ],
   Services: [
-    { label: 'CFA Exam Coaching', href: '#coaching' },
+    { label: 'CFA Exam Coaching', href: '/coaching' },
     { label: 'Exempt Market Investing', href: '#investing' },
     { label: 'Mortgage Solutions', href: '#mortgages' },
     { label: 'Book a Consultation', href: '#contact' },
   ],
   Contact: [
-    { label: 'hello@vipingarg.com', href: 'mailto:hello@vipingarg.com', icon: Mail },
-    { label: 'Schedule a call', href: '#contact', icon: Phone },
-    { label: 'Canada', href: '#', icon: MapPin },
+    { label: 'hello@vipingarg.com', href: 'mailto:hello@vipingarg.com', icon: HiEnvelope },
+    { label: 'Schedule a call', href: '#contact', icon: HiPhone },
+    { label: 'Canada', href: '#', icon: HiMapPin },
   ],
 }
 

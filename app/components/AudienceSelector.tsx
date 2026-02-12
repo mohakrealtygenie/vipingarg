@@ -1,19 +1,19 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GraduationCap, TrendingUp, Home, ArrowRight } from 'lucide-react'
+import { HiAcademicCap, HiArrowTrendingUp, HiHomeModern, HiArrowRight } from 'react-icons/hi2'
 
 const audiences = [
   {
-    icon: GraduationCap,
+    icon: HiAcademicCap,
     title: 'Student or Professional',
     description: 'Preparing for finance exams or academic courses',
     cta: 'Go to Coaching',
-    href: '#coaching',
+    href: '/coaching',
     color: 'bg-blue/10 text-blue',
   },
   {
-    icon: TrendingUp,
+    icon: HiArrowTrendingUp,
     title: 'Investor',
     description: 'Exploring private markets and alternative investments',
     cta: 'Go to Exempt Markets',
@@ -21,7 +21,7 @@ const audiences = [
     color: 'bg-emerald-50 text-emerald-600',
   },
   {
-    icon: Home,
+    icon: HiHomeModern,
     title: 'Homebuyer or Real Estate Investor',
     description: 'Looking for smart mortgage options',
     cta: 'Go to Mortgages',
@@ -47,9 +47,9 @@ export default function AudienceSelector() {
     <section className="py-20 md:py-28 bg-white">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
@@ -88,7 +88,7 @@ export default function AudienceSelector() {
               </div>
               <span className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-blue opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                 {a.cta}
-                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                <HiArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </span>
             </motion.a>
           ))}

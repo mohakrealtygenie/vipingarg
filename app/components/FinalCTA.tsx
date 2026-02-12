@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { HiArrowRight } from 'react-icons/hi2'
 
 export default function FinalCTA() {
   return (
@@ -34,7 +34,7 @@ export default function FinalCTA() {
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-blue px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-blue-light hover:shadow-lg hover:shadow-blue/25 group"
           >
             Book a Call
-            <ArrowRight
+            <HiArrowRight
               size={16}
               className="transition-transform group-hover:translate-x-1"
             />

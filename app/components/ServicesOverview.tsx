@@ -1,21 +1,21 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GraduationCap, TrendingUp, Home, ArrowRight } from 'lucide-react'
+import { HiAcademicCap, HiArrowTrendingUp, HiHomeModern, HiArrowRight } from 'react-icons/hi2'
 
 const services = [
   {
     id: 'coaching',
-    icon: GraduationCap,
+    icon: HiAcademicCap,
     title: 'Finance Coaching',
     items: ['CFA', 'CSC', 'IFC', 'CPH', 'University finance subjects'],
     cta: 'View Coaching',
-    href: '#coaching',
+    href: '/coaching',
     accent: 'bg-blue/10 text-blue',
   },
   {
     id: 'investing',
-    icon: TrendingUp,
+    icon: HiArrowTrendingUp,
     title: 'Exempt Market Investing',
     items: ['Private equity', 'Real estate', 'Debt offerings', 'Alternative investments'],
     cta: 'Learn More',
@@ -24,7 +24,7 @@ const services = [
   },
   {
     id: 'mortgages',
-    icon: Home,
+    icon: HiHomeModern,
     title: 'Mortgage Solutions',
     items: ['Purchase', 'Refinance', 'Investment properties', 'Self-employed'],
     cta: 'Explore',
@@ -41,8 +41,8 @@ const container = {
 }
 
 const card = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, y: 15 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 }
 
 export default function ServicesOverview() {
@@ -50,9 +50,9 @@ export default function ServicesOverview() {
     <section className="py-20 md:py-28 bg-gray-100/60">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
@@ -109,7 +109,7 @@ export default function ServicesOverview() {
                 className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue transition-colors hover:text-blue-light group/link"
               >
                 {service.cta}
-                <ArrowRight
+                <HiArrowRight
                   size={14}
                   className="transition-transform group-hover/link:translate-x-1"
                 />

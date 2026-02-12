@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { HiBars3, HiXMark } from 'react-icons/hi2'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
   { label: 'Home', href: '#' },
-  { label: 'Coaching', href: '#coaching' },
+  { label: 'Coaching', href: '/coaching' },
   { label: 'Investing', href: '#investing' },
   { label: 'Mortgages', href: '#mortgages' },
   { label: 'About', href: '#about' },
@@ -55,7 +55,7 @@ export default function Navbar() {
             className="md:hidden p-2 text-gray-700"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <HiXMark size={22} /> : <HiBars3 size={22} />}
           </button>
         </div>
       </div>

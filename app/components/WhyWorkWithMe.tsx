@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Check } from 'lucide-react'
+import { HiCheck } from 'react-icons/hi2'
 
 const credentials = [
   'CFA Charterholder with an MBA in Finance',
@@ -16,9 +16,9 @@ export default function WhyWorkWithMe() {
     <section id="about" className="py-20 md:py-28 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
@@ -42,7 +42,7 @@ export default function WhyWorkWithMe() {
             {credentials.map((item, i) => (
               <div key={i} className="flex items-start gap-3">
                 <div className="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-blue/10 flex items-center justify-center">
-                  <Check size={14} className="text-blue" />
+                  <HiCheck size={14} className="text-blue" />
                 </div>
                 <p className="text-gray-700 text-sm md:text-base leading-relaxed">
                   {item}

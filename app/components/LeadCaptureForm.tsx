@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Send } from 'lucide-react'
+import { HiPaperAirplane } from 'react-icons/hi2'
 
 const audienceOptions = [
   'Student / Exam Candidate',
@@ -140,7 +140,7 @@ export default function LeadCaptureForm() {
                 type="submit"
                 className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-blue-light hover:shadow-lg active:scale-[0.98]"
               >
-                <Send size={16} />
+                <HiPaperAirplane size={16} />
                 Book Consultation
               </button>
             </form>
