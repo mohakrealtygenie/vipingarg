@@ -30,9 +30,9 @@ export default function CoachingHero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mx-auto max-w-5xl text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-navy leading-[1.05] mb-8 font-[family-name:var(--font-serif-display)]"
+            className="mx-auto max-w-5xl text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-navy leading-[1.05] mb-8 font-[family-name:var(--font-apple)]"
           >
-            Finance Coaching That Builds <span className="italic text-blue font-[family-name:var(--font-serif)]">Confidence</span>
+            Finance Coaching That Builds <span className="italic text-blue font-[family-name:var(--font-apple)]">Confidence</span>
             <br />
             <span className="text-gray-400 font-light font-[family-name:var(--font-sans)] text-4xl md:text-5xl block mt-4">— Not Just Exam Scores</span>
           </motion.h1>
@@ -49,22 +49,21 @@ export default function CoachingHero() {
           </motion.p>
 
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
+          <div>
             <Link
-              href="#coaching-form"
-              className="bg-blue relative overflow-hidden px-10 py-5 rounded-full text-white font-bold text-lg hover:shadow-xl hover:scale-[1.02] transition-all flex items-center gap-3 group tracking-wide shadow-inner shadow-white/50"
+              href="#investing-form"
+              className="inline-flex items-center gap-2 bg-blue text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue transition-colors duration-300 shadow-md hover:shadow-lg"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-              <span className="relative z-10 flex items-center gap-3">
-                Book a Free Coaching Call
-                <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
-              </span>
+              Book a Free Coaching Call
+              <HiArrowRight className="w-5 h-5" />
             </Link>      
-          </motion.div>
+          </div>         
+        </motion.div>
         </motion.div>
       </div>
     </section>

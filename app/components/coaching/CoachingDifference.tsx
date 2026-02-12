@@ -55,7 +55,7 @@ export default function CoachingDifference() {
             </span>
             <h2 className="font-[family-name:var(--font-apple)] text-3xl md:text-5xl font-bold text-navy mt-4 mb-6 leading-tight">
               You Don&apos;t Just Pass. <br />
-              <span className="text-blue italic font-[family-name:var(--font-serif)]">
+              <span className="text-blue italic font-[family-name:var(--font-apple)]">
                 You Understand.
               </span>
             </h2>
@@ -65,7 +65,7 @@ export default function CoachingDifference() {
             </p>
 
             <div className="relative pl-8 border-l-4 border-blue/20 py-2">
-              <p className="text-xl font-medium text-navy italic font-[family-name:var(--font-serif)]">
+              <p className="text-xl font-medium text-navy italic font-[family-name:var(--font-apple)]">
                 &quot;The goal isn&apos;t just a certificate. It&apos;s competence.&quot;
               </p>
             </div>
@@ -75,8 +75,7 @@ export default function CoachingDifference() {
           <motion.div
             initial={{ opacity: 0, x: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.3 }}
             className="space-y-6"
           >
             {differences.map((item, index) => (

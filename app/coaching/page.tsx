@@ -15,7 +15,6 @@ export const metadata = {
 export default function CoachingPage() {
   return (
     <>
-      <Navbar />
       <main>
         <CoachingHero />
         <CoachingAudience />
@@ -24,7 +23,6 @@ export default function CoachingPage() {
         <CoachingProcess />
         <CoachingForm />
       </main>
-      <Footer />
     </>
   )
 }

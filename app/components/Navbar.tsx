@@ -8,10 +8,10 @@ import Link from 'next/link'
 const navLinks = [
   { label: 'Home', href: '#' },
   { label: 'Coaching', href: '/coaching' },
-  { label: 'Investing', href: '#investing' },
-  { label: 'Mortgages', href: '#mortgages' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Investing', href: '/investing' },
+  { label: 'Mortgages', href: '/mortgages' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export default function Navbar() {

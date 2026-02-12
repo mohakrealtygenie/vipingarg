@@ -30,7 +30,7 @@ export default function CoachingForm() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="font-[family-name:var(--font-serif-display)] text-4xl font-bold tracking-tight text-navy leading-tight">
+              <h2 className="font-[family-name:var(--font-apple)] text-4xl font-bold tracking-tight text-navy leading-tight">
                 Ready to master your <span className="text-blue italic font-[family-name:var(--font-apple)]">finance exams?</span>
               </h2>
               <p className="mt-6 text-lg text-gray-600 leading-relaxed font-[family-name:var(--font-sans)]">

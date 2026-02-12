@@ -1,4 +1,3 @@
-import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import AudienceSelector from './components/AudienceSelector'
 import WhatIDo from './components/WhatIDo'
@@ -7,12 +6,10 @@ import ServicesOverview from './components/ServicesOverview'
 import LeadCaptureForm from './components/LeadCaptureForm'
 import TrustBar from './components/TrustBar'
 import FinalCTA from './components/FinalCTA'
-import Footer from './components/Footer'
 
 export default function HomePage() {
   return (
     <>
-      <Navbar />
       <main>
         <HeroSection />
         <AudienceSelector />
@@ -23,7 +20,7 @@ export default function HomePage() {
         <TrustBar />
         <FinalCTA />
       </main>
-      <Footer />
+
     </>
   )
 }
