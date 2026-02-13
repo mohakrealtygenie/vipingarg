@@ -6,6 +6,52 @@ import { HiHome } from 'react-icons/hi2'
 
 export default function MortgagesForm() {
   const [lookingToState, setLookingToState] = useState('')
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [propertyValue, setPropertyValue] = useState('');
+  const [downPayment, setDownPayment] = useState('');
+  const [creditRange, setCreditRange] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if(!name || !email || !phone || !propertyValue || !downPayment || !lookingToState){
+      console.error('Please fill all the fields');
+      return;
+    }
+
+    const formData = {
+      whichForm: 'mortgage',
+      name,
+      email,
+      phone,
+      propertyValue,
+      downPayment,
+      lookingFor: lookingToState,
+      creditRange,
+    }
+
+    const submitRes = await fetch('/api/submitForm', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (submitRes.ok) {
+      setName('');
+      setEmail('');
+      setPhone('');
+      setPropertyValue('');
+      setDownPayment('');
+      setLookingToState('');
+      setCreditRange('');
+      console.log('Form submitted successfully');
+    }else{
+      console.log('Form submission failed');
+    }
+  }
 
   return (
     <section id="mortgage-form" className="py-24 bg-off-white border-t border-gray-200">
@@ -26,12 +72,15 @@ export default function MortgagesForm() {
            transition={{ duration: 0.5 }}
            className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 md:p-12"
         >
-          <form className="space-y-8">
+          <form className="space-y-8" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Full Name</label>
                 <input
                   type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                   placeholder="John Doe"
                 />
@@ -40,6 +89,9 @@ export default function MortgagesForm() {
                 <label className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Email</label>
                 <input
                   type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                   placeholder="john@example.com"
                 />
@@ -50,6 +102,9 @@ export default function MortgagesForm() {
               <label className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Phone</label>
               <input
                 type="tel"
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                 placeholder="(555) 123-4567"
               />
@@ -63,6 +118,7 @@ export default function MortgagesForm() {
                   <label key={option} className="cursor-pointer">
                     <input
                       type="radio"
+                      required
                       name="lookingTo"
                       value={option}
                       checked={lookingToState === option}
@@ -86,6 +142,9 @@ export default function MortgagesForm() {
                 <label className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Property Value</label>
                 <input
                   type="text"
+                  required
+                  value={propertyValue}
+                  onChange={(e) => setPropertyValue(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                   placeholder="$"
                 />
@@ -94,6 +153,9 @@ export default function MortgagesForm() {
                 <label className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Down Payment / Equity</label>
                 <input
                   type="text"
+                  required
+                  value={downPayment}
+                  onChange={(e) => setDownPayment(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                   placeholder="$"
                 />
@@ -104,6 +166,8 @@ export default function MortgagesForm() {
               <label className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Credit Range (Optional)</label>
               <input
                 type="text"
+                value={creditRange}
+                onChange={(e) => setCreditRange(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                 placeholder="e.g. 700+"
               />

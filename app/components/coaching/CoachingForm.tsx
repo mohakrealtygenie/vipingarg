@@ -16,7 +16,44 @@ const exams = [
 ]
 
 export default function CoachingForm() {
-  const [selectedExam, setSelectedExam] = useState('')
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [selectedExam, setSelectedExam] = useState('');
+  const [targetTimeline, setTargetTimeline] = useState('');
+  const [location, setLocation] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log({ name, email, selectedExam, targetTimeline, location });
+
+    const formData = {
+      name,
+      email,
+      exam: selectedExam,
+      targetTimeline,
+      location,
+      whichForm: 'coaching',
+    };
+    
+    const submitRes = await fetch('/api/submitForm', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (submitRes.ok) {
+      setName('');
+      setEmail('');
+      setSelectedExam('');
+      setTargetTimeline('');
+      setLocation('');
+      console.log('Form submitted successfully');
+    }else{
+      console.log('Form submission failed');
+    }
+  };
 
   return (
     <section id="coaching-form" className="py-24 bg-off-white relative">
@@ -59,7 +96,7 @@ export default function CoachingForm() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="lg:col-span-3 bg-white rounded-xl shadow-lg border border-gray-100 p-8 md:p-10"
           >
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="relative group">
@@ -67,6 +104,8 @@ export default function CoachingForm() {
                     <input
                       type="text"
                       placeholder="Full Name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-400"
                     />
                   </div>
@@ -75,6 +114,8 @@ export default function CoachingForm() {
                     <input
                       type="email"
                       placeholder="Email Address"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-400"
                     />
                   </div>
@@ -113,6 +154,8 @@ export default function CoachingForm() {
                     <input
                       type="text"
                       placeholder="Target Timeline (e.g. June 2026)"
+                      value={targetTimeline}
+                      onChange={(e) => setTargetTimeline(e.target.value)}
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-400"
                     />
                   </div>
@@ -121,6 +164,8 @@ export default function CoachingForm() {
                     <input
                       type="text"
                       placeholder="Location"
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-400"
                     />
                   </div>

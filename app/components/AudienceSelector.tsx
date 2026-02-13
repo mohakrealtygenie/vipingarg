@@ -87,7 +87,7 @@ export default function AudienceSelector() {
                 <p className="text-sm text-gray-500 mt-0.5">{a.description}</p>
               </div>
               <span className="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-blue opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                {a.cta}
+                {/* {a.cta} */}
                 <HiArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </span>
             </motion.a>
