@@ -18,7 +18,7 @@ const footerLinks = {
     { label: 'Book a Consultation', href: '#contact' },
   ],
   Contact: [
-    { label: 'hello@vipingarg.com', href: 'mailto:hello@vipingarg.com', icon: HiEnvelope },
+    { label: 'contact@vipingarg.com', href: 'mailto:contact@vipingarg.com', icon: HiEnvelope },
     { label: 'Schedule a call', href: '#contact', icon: HiPhone },
     { label: 'Canada', href: '#', icon: HiMapPin },
   ],
