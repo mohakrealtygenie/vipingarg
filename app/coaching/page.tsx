@@ -17,8 +17,8 @@ export default function CoachingPage() {
     <>
       <main>
         <CoachingHero />
-        <CoachingAudience />
         <CoachingDifference />
+        <CoachingAudience />
         <CoachingPrograms />
         <CoachingProcess />
         <CoachingForm />

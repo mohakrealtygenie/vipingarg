@@ -6,81 +6,77 @@ import { ArrowRight } from 'lucide-react'
 const programs = [
   {
     title: 'CFA Program',
-    features: [
-      'Full syllabus coverage',
-      'Topic strategy',
-      'Exam technique',
-    ],
-    cta: 'View CFA Coaching',
+    description: 'Full syllabus coverage with topic strategy and exam technique mastery.',
+    features: ['Level I, II, III', 'Mock exams', 'Concept drills'],
+    cta: 'Learn More',
   },
   {
     title: 'CSI Exams',
-    subtitle: 'CSC | IFC | CPH',
-    features: [
-      'CIRO-aware perspective',
-      'Regulatory frameworks',
-      'Practical application',
-    ],
-    cta: 'View CSI Coaching',
+    description: 'CIRO-aware perspective with regulatory frameworks and practical application.',
+    features: ['CSC', 'IFC', 'CPH'],
+    cta: 'Learn More',
   },
   {
-    title: 'University Tutoring',
-    subtitle: 'Finance & Accounting',
-    features: [
-      'Corporate Finance',
-      'Valuation',
-      'Portfolio Management',
-    ],
-    cta: 'View Academic Tutoring',
+    title: 'University Finance',
+    description: 'Corporate finance, valuation, and portfolio management tutoring.',
+    features: ['Undergrad', 'MBA / MFin', 'PhD Level'],
+    cta: 'Learn More',
+  },
+  {
+    title: 'Career Coaching',
+    description: 'Interview prep, resume review, and career path guidance for finance roles.',
+    features: ['Interview prep', 'Resume review', 'Networking'],
+    cta: 'Learn More',
   },
 ]
 
 export default function CoachingPrograms() {
   return (
-    <section className="py-24 bg-navy text-white relative overflow-hidden">
+    <section className="py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-blue-300">
+          <span className="text-xs font-bold uppercase tracking-wider text-blue mb-2 block">
             Programs Offered
           </span>
-          <h2 className="font-[family-name:var(--font-serif-display)] text-3xl md:text-4xl font-bold mt-4">
-            Comprehensive Training Paths
+          <h2 className="font-[family-name:var(--font-serif-display)] text-3xl md:text-4xl font-bold text-navy">
+            How Can We Help You <br />
+            Reach Your <span className="text-blue italic">Goals</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {programs.map((program, index) => (
             <motion.div
               key={program.title}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="relative group rounded-3xl p-8 bg-black/20 border border-white/5 hover:bg-white/10 transition-colors duration-300 flex flex-col h-full"
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              className="group bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
-              <h3 className="text-2xl font-bold mb-1">{program.title}</h3>
-              {program.subtitle && (
-                <p className="text-sm font-medium text-white/60 mb-1">
-                  {program.subtitle}
-                </p>
-              )}
+              <h3 className="text-lg font-bold text-navy mb-2 group-hover:text-blue transition-colors">
+                {program.title}
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
+                {program.description}
+              </p>
 
-              <ul className="mt-8 space-y-4 mb-8 flex-1">
-                {program.features.map((feature) => (
-                  <li
-                    key={feature}
-                    className="flex items-center gap-3 text-white/80 text-sm"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue shrink-0" />
-                    {feature}
-                  </li>
+              {/* Tags */}
+              <div className="flex flex-wrap gap-1.5 mb-5">
+                {program.features.map((f) => (
+                  <span key={f} className="text-xs px-2.5 py-1 rounded-full bg-gray-50 text-gray-500 border border-gray-100">
+                    {f}
+                  </span>
                 ))}
-              </ul>
+              </div>
 
-              <button className="w-full py-4 rounded-xl bg-white/5 border border-white/5 text-white font-semibold text-sm hover:bg-white/10 transition-all flex items-center justify-center gap-2 group/btn">
+              <a
+                href="#coaching-form"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy hover:text-blue transition-colors group/link"
+              >
                 {program.cta}
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </button>
+                <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+              </a>
             </motion.div>
           ))}
         </div>

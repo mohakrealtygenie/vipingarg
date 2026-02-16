@@ -1,65 +1,108 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { ArrowLeft, ArrowRight, Quote } from 'lucide-react'
 
-const steps = [
+const testimonials = [
   {
-    number: '01',
-    title: 'Initial Discussion',
-    description: 'We assess your current level, goals, and timeline.',
+    quote: "Vipin's coaching completely changed how I approached the CFA exam. I went from feeling lost to scoring in the top percentile. His method of building conceptual clarity first made everything click.",
+    name: 'Sarah M.',
+    title: 'CFA Charterholder',
   },
   {
-    number: '02',
-    title: 'Personalized Plan',
-    description: 'A custom roadmap is created targeting your weak areas.',
+    quote: "The one-on-one attention made all the difference. Instead of generic study plans, Vipin identified exactly where I was struggling and built a focused plan around that.",
+    name: 'James L.',
+    title: 'CSC Graduate',
   },
   {
-    number: '03',
-    title: 'Regular Sessions',
-    description: 'Focused concept clearing and rigorous practice.',
-  },
-  {
-    number: '04',
-    title: 'Ongoing Support',
-    description: 'Continuous feedback until exam day or career goal.',
+    quote: "I was struggling with my university finance courses until I started working with Vipin. He has a gift for making complex topics simple and intuitive.",
+    name: 'Priya K.',
+    title: 'MBA Student',
   },
 ]
 
 export default function CoachingProcess() {
-  return (
-    <section className="py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <span className="text-xs font-semibold uppercase tracking-wider text-blue">
-            The Process
-          </span>
-          <h2 className="font-[family-name:var(--font-apple)] text-3xl md:text-4xl font-bold text-navy mt-4">
-            How Coaching Works
-          </h2>
-          <p className="text-gray-500 mt-4">
-             Simple. Focused. Effective.
-          </p>
-        </div>
+  const [current, setCurrent] = useState(0)
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="relative bg-white pt-4 md:pt-0 text-center md:text-left border-t-2 border-gray-100 md:border-t-0 md:border-l-2 md:pl-6"
-            >
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white border-4 border-gray-50 text-blue font-bold text-lg md:text-xl flex items-center justify-center mb-6 mx-auto md:mx-0 shadow-sm z-10 relative">
-                {step.number}
+  const next = () => setCurrent((prev) => (prev + 1) % testimonials.length)
+  const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+
+  return (
+    <section className="py-24 bg-gray-50/50">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Left: Title + Nav */}
+          <motion.div
+            initial={{ opacity: 0, x: -15 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="text-xs font-bold uppercase tracking-wider text-blue mb-2 block">
+              Testimonials
+            </span>
+            <h2 className="font-[family-name:var(--font-serif-display)] text-3xl md:text-4xl font-bold text-navy leading-tight">
+              See What <span className="text-blue italic">Our Clients</span><br />
+              Are Saying
+            </h2>
+
+            <div className="flex gap-3 mt-8">
+              <button
+                onClick={prev}
+                className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:border-blue hover:text-blue transition-colors"
+                aria-label="Previous testimonial"
+              >
+                <ArrowLeft size={16} />
+              </button>
+              <button
+                onClick={next}
+                className="w-10 h-10 rounded-full bg-blue text-white flex items-center justify-center hover:bg-navy transition-colors"
+                aria-label="Next testimonial"
+              >
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Right: Testimonial Card */}
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+            className="relative bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-100"
+          >
+            <Quote className="w-8 h-8 text-blue/20 mb-4" />
+            <p className="text-gray-600 leading-relaxed text-base mb-8">
+              &ldquo;{testimonials[current].quote}&rdquo;
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-blue/10 flex items-center justify-center text-blue font-bold text-sm">
+                {testimonials[current].name.charAt(0)}
               </div>
-              <h3 className="text-lg font-bold text-navy mb-3">{step.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                {step.description}
-              </p>
-            </motion.div>
-          ))}
+              <div>
+                <p className="font-bold text-navy text-sm">{testimonials[current].name}</p>
+                <p className="text-gray-400 text-xs">{testimonials[current].title}</p>
+              </div>
+            </div>
+
+            {/* Dots */}
+            <div className="flex gap-1.5 mt-6">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    i === current ? 'bg-blue' : 'bg-gray-200'
+                  }`}
+                  aria-label={`Go to testimonial ${i + 1}`}
+                />
+              ))}
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
