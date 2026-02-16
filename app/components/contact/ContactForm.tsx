@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { HiPaperAirplane } from 'react-icons/hi2'
+import { ArrowRight } from 'lucide-react'
 
 export default function ContactForm() {
 
@@ -51,13 +51,10 @@ export default function ContactForm() {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ duration: 0.5 }}
-           className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 md:p-12 relative overflow-hidden"
+           className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 relative overflow-hidden"
         >
-          {/* Decorative background blur */}
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue/5 rounded-full blur-3xl pointer-events-none" />
-
           <div className="relative z-10 mb-10 text-center">
-             <h2 className="text-3xl font-bold text-navy mb-4 font-[family-name:var(--font-apple)]">
+             <h2 className="text-3xl font-bold text-navy mb-4 font-[family-name:var(--font-serif-display)]">
                Send a Message
              </h2>
              <p className="text-gray-500">
@@ -74,7 +71,7 @@ export default function ContactForm() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                   placeholder="Your Name"
                 />
               </div>
@@ -85,7 +82,7 @@ export default function ContactForm() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                   placeholder="email@example.com"
                 />
               </div>
@@ -98,7 +95,7 @@ export default function ContactForm() {
                 required
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                 placeholder="How can I help you?"
               />
             </div>
@@ -110,17 +107,17 @@ export default function ContactForm() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300 resize-none"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300 resize-none"
                 placeholder="Tell me a bit more about what you're looking for..."
               />
             </div>
 
             <button
                type="submit"
-               className="w-full bg-navy text-white py-4 px-6 rounded-full font-bold text-lg hover:bg-blue transition-colors duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg mt-4"
+               className="w-full bg-navy text-white py-4 px-6 rounded-full font-bold text-lg hover:bg-navy-light transition-colors duration-300 flex items-center justify-center gap-2 shadow-sm mt-4 group"
             >
               Send Message
-              <HiPaperAirplane className="w-5 h-5 -rotate-45" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </form>
         </motion.div>

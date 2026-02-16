@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { HiHome, HiCurrencyDollar, HiBriefcase, HiArrowPath, HiClipboardDocumentCheck, HiChartBar, HiShieldCheck } from 'react-icons/hi2'
 
 export default function MortgagesContent() {
   return (
@@ -13,20 +12,18 @@ export default function MortgagesContent() {
           {/* Who This Is For */}
           <div>
             <span className="text-blue font-bold tracking-wider uppercase text-sm mb-2 block">Target Audience</span>
-            <h2 className="text-3xl font-bold text-navy mb-8 font-[family-name:var(--font-apple)]">
+            <h2 className="text-3xl font-bold text-navy mb-8 font-[family-name:var(--font-serif-display)]">
               Who This Is For
             </h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { title: 'First-time Buyers', icon: HiHome },
-                { title: 'Refinancing', icon: HiArrowPath },
-                { title: 'Real Estate Investors', icon: HiBriefcase },
-                { title: 'Clients Wanting Structure', icon: HiShieldCheck }
+                { title: 'First-time Buyers', },
+                { title: 'Refinancing', },
+                { title: 'Real Estate Investors', },
+                { title: 'Clients Wanting Structure', }
               ].map((item) => (
-                <div key={item.title} className="bg-gray-50 p-6 rounded-xl border border-gray-100 flex flex-col items-center text-center gap-4 hover:border-blue transition-colors duration-300">
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-blue shadow-sm">
-                    <item.icon className="w-6 h-6" />
-                  </div>
+                <div key={item.title} className="bg-gray-50 p-6 rounded-xl border border-gray-100 flex flex-col items-center text-center gap-2 hover:border-blue transition-colors duration-300">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue mb-2" />
                   <span className="font-bold text-navy">{item.title}</span>
                 </div>
               ))}
@@ -35,9 +32,8 @@ export default function MortgagesContent() {
 
           {/* My Approach */}
           <div className="bg-navy rounded-3xl p-10 md:p-12 text-white relative overflow-hidden flex flex-col justify-center">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-blue/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
              <div className="relative z-10">
-                <h2 className="text-3xl font-bold mb-8 font-[family-name:var(--font-apple)]">My Approach</h2>
+                <h2 className="text-3xl font-bold mb-8 font-[family-name:var(--font-serif-display)]">My Approach</h2>
                 <div className="space-y-6">
                   {[
                     'Cash-flow Impact Analysis',
@@ -59,15 +55,15 @@ export default function MortgagesContent() {
 
         {/* Services */}
         <div>
-          <h2 className="text-3xl font-bold text-navy mb-12 text-center font-[family-name:var(--font-apple)]">
+          <h2 className="text-3xl font-bold text-navy mb-12 text-center font-[family-name:var(--font-serif-display)]">
             Comprehensive Specialist Services
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: 'Purchase Mortgages', icon: HiHome, desc: 'Navigating your first or next home purchase with confidence.' },
-              { title: 'Refinancing', icon: HiCurrencyDollar, desc: 'Accessing equity or restructuring debt for better cash flow.' },
-              { title: 'Investment Property', icon: HiChartBar, desc: 'Strategic financing for growing your real estate portfolio.' },
-              { title: 'Strategic Renewals', icon: HiArrowPath, desc: 'Negotiating better terms aligned with your evolving goals.' }
+              { title: 'Purchase Mortgages', desc: 'Navigating your first or next home purchase with confidence.' },
+              { title: 'Refinancing', desc: 'Accessing equity or restructuring debt for better cash flow.' },
+              { title: 'Investment Property', desc: 'Strategic financing for growing your real estate portfolio.' },
+              { title: 'Strategic Renewals', desc: 'Negotiating better terms aligned with your evolving goals.' }
             ].map((service, index) => (
               <motion.div
                 key={service.title}
@@ -77,8 +73,8 @@ export default function MortgagesContent() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group p-8 rounded-2xl bg-off-white border border-gray-100 hover:border-blue/30 hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-xl bg-white text-navy flex items-center justify-center mb-6 shadow-sm group-hover:bg-blue group-hover:text-white transition-colors">
-                  <service.icon className="w-7 h-7" />
+                <div className="text-2xl font-bold text-blue/20 mb-6 group-hover:text-blue transition-colors">
+                  0{index + 1}
                 </div>
                 <h3 className="text-xl font-bold text-navy mb-3">{service.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -106,8 +102,8 @@ export default function MortgagesContent() {
              { step: '03', title: 'Explore Options', desc: 'Presenting tailored mortgage strategies.' },
              { step: '04', title: 'Clear Explanation', desc: 'Ensuring you understand every detail before signing.' }
            ].map((item, index) => (
-             <div key={item.step} className="text-center relative">
-                <div className="w-12 h-12 mx-auto bg-navy text-white rounded-full flex items-center justify-center font-bold mb-4 shadow-lg shadow-navy/20">
+             <div key={item.step} className="text-center relative group p-6 rounded-2xl hover:bg-gray-50 transition-colors">
+                <div className="w-12 h-12 mx-auto bg-navy text-white rounded-full flex items-center justify-center font-bold mb-4 shadow-sm group-hover:bg-blue transition-colors">
                   {item.step}
                 </div>
                 <h3 className="text-lg font-bold text-navy mb-2">{item.title}</h3>

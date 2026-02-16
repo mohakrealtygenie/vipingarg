@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { HiBars3, HiXMark } from 'react-icons/hi2'
+import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 
@@ -24,7 +24,7 @@ export default function Navbar() {
           {/* Logo */}
           <a
             href="/"
-            className="font-[family-name:var(--font-apple)] text-3xl font-bold tracking-tight text-navy"
+            className="font-[family-name:var(--font-serif-display)] text-3xl font-bold tracking-tight text-navy"
           >
             Vipin Garg
           </a>
@@ -50,7 +50,7 @@ export default function Navbar() {
           >
             <Link
               href="https://cal.com/vipin-garg"
-              className="relative overflow-hidden rounded-full bg-blue px-8 py-3 text-sm font-bold text-white shadow-lg"
+              className="relative overflow-hidden rounded-full bg-blue px-8 py-3 text-sm font-bold text-white shadow-sm hover:shadow-md transition-shadow"
             >
               <span className="relative z-10">Book a Call</span>
               <motion.div
@@ -73,7 +73,7 @@ export default function Navbar() {
             className="md:hidden p-2 text-gray-700"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <HiXMark size={22} /> : <HiBars3 size={22} />}
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>

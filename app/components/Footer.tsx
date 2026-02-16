@@ -1,4 +1,4 @@
-import { HiEnvelope, HiPhone, HiMapPin } from 'react-icons/hi2'
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 const footerLinks = {
   'Vipin Garg': {
@@ -7,20 +7,20 @@ const footerLinks = {
   },
   'Quick Links': [
     { label: 'Coaching', href: '/coaching' },
-    { label: 'Investing', href: '#investing' },
-    { label: 'Mortgages', href: '#mortgages' },
-    { label: 'About', href: '#about' },
+    { label: 'Investing', href: '/investing' },
+    { label: 'Mortgages', href: '/mortgages' },
+    { label: 'About', href: '/about' },
   ],
   Services: [
     { label: 'CFA Exam Coaching', href: '/coaching' },
-    { label: 'Exempt Market Investing', href: '#investing' },
-    { label: 'Mortgage Solutions', href: '#mortgages' },
-    { label: 'Book a Consultation', href: '#contact' },
+    { label: 'Exempt Market Investing', href: '/investing' },
+    { label: 'Mortgage Solutions', href: '/mortgages' },
+    { label: 'Book a Consultation', href: '/contact' },
   ],
   Contact: [
-    { label: 'contact@vipingarg.com', href: 'mailto:contact@vipingarg.com', icon: HiEnvelope },
-    { label: 'Schedule a call', href: '#contact', icon: HiPhone },
-    { label: 'Canada', href: '#', icon: HiMapPin },
+    { label: 'contact@vipingarg.com', href: 'mailto:contact@vipingarg.com', icon: Mail },
+    { label: 'Schedule a call', href: '/contact', icon: Phone },
+    { label: 'Canada', href: '#', icon: MapPin },
   ],
 }
 
@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Column */}
           <div>
-            <h3 className="font-[family-name:var(--font-apple)] text-lg font-bold text-white mb-3">
+            <h3 className="font-[family-name:var(--font-serif-display)] text-lg font-bold text-white mb-3">
               Vipin Garg
             </h3>
             <p className="text-sm leading-relaxed">

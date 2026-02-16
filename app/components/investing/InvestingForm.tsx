@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { HiPaperAirplane } from 'react-icons/hi2'
+import { ArrowRight } from 'lucide-react'
 
 export default function InvestingForm() {
 
@@ -53,11 +53,11 @@ export default function InvestingForm() {
     <section id="investing-form" className="py-24 bg-off-white border-t border-gray-200">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4 font-[family-name:var(--font-apple)]">
+          <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4 font-[family-name:var(--font-serif-display)]">
             Start the Conversation
           </h2>
           <p className="text-gray-500">
-            Let's determine if private markets are the right fit for your portfolio.
+            Let&apos;s determine if private markets are the right fit for your portfolio.
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export default function InvestingForm() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-white rounded-xl shadow-lg border border-gray-100 p-8 md:p-12"
+          className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12"
         >
           <form className="space-y-8" onSubmit={handleInvestingSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -74,7 +74,7 @@ export default function InvestingForm() {
                 <label className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Full Name</label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                   placeholder="John Doe"
                   onChange={(e) => setName(e.target.value)}
                   value={name}
@@ -84,7 +84,7 @@ export default function InvestingForm() {
                 <label className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Email</label>
                 <input
                   type="email"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                   placeholder="john@example.com"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
@@ -96,7 +96,7 @@ export default function InvestingForm() {
               <label className="text-xs font-bold uppercase tracking-wider text-gray-500 ml-1">Province</label>
               <input
                 type="text"
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white outline-none focus:border-blue focus:ring-1 focus:ring-blue transition-all text-sm placeholder:text-gray-300"
                 placeholder="e.g. Ontario"
                 onChange={(e) => setProvince(e.target.value)}
                 value={province}
@@ -182,10 +182,10 @@ export default function InvestingForm() {
 
             <button
               type="submit"
-              className="w-full bg-blue text-white py-4 px-6 rounded-full font-bold text-lg hover:bg-navy transition-colors duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg mt-8"
+              className="w-full bg-blue text-white py-4 px-6 rounded-full font-bold text-lg hover:bg-navy transition-colors duration-300 flex items-center justify-center gap-2 shadow-sm hover:shadow-md mt-8 group"
             >
               Request Intro Call
-              <HiPaperAirplane className="w-5 h-5 -rotate-45" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
 
             <p className="text-xs text-gray-400 text-center leading-relaxed mt-6">
